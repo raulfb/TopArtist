@@ -1,9 +1,10 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <h1>TopArtist</h1>
 
-    <select v-model="selectedCountry">
+  <div id="app">
+     <h1 class="titulo">TopArtist.es</h1>
+     <p>Selecciona el pais del que quieres ver los artistas más escuchados.</p>
+    <!-- <img src="./assets/logo.png"> -->
+    <select class="selector" v-model="selectedCountry">
       <option v-for="country in countries" v-bind:value="country.value">{{ country.name }}</option>
     </select>
     <spinner v-show="loading"></spinner>
@@ -74,21 +75,35 @@ export default {
   margin-top: 60px;
 }
 
+h1.titulo {
+    margin: 0;
+    font-size: 60px;
+    color:seagreen;
+    margin-top: 0;
+    padding-top:0;
+    font-weight: bolder;
+}
 h1, h2 {
   font-weight: normal;
 }
 
 ul {
   list-style-type: none;
-  padding: 0;
+  padding: 10px;
 }
 
 li {
-  display: inline-block;
+  display:block;
   margin: 0 10px;
 }
 
 a {
   color: #42b983;
+}
+.selector, p{
+  color: seagreen;
+}
+body{
+  background:#cccccc;
 }
 </style>
