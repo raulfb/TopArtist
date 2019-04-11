@@ -2,29 +2,57 @@
   <div id="app">
     <img src="./assets/logo.png">
     <h1>TopArtist</h1>
+
+    <select v-model="selectedCountry">
+      <option v-for="country in countries" v-bind:value="country.value">{{ country.name }}</option>
+    </select>
     <ul>
-        <!-- <li v-for="artist in artists"> {{ artist.name }} </li> -->
-        <artist v-for="artist in artists" v-bind:artist="artist"></artist>
+      <artist v-for="artist in artists" v-bind:artist="artist" v-bind:key="artist.mbid"></artist>
     </ul>
   </div>
 </template>
 
 <script>
+import Artist from './components/Artist.vue'
 import getArtists from './api'
 
 export default {
   name: 'app',
   data () {
     return {
-      artists: []
+      artists: [],
+      countries: [
+        {name: 'Argentina', value: 'argentina'},
+        {name: 'Chile', value: 'chile'},
+        {name: 'Ecuador', value: 'ecuador'},
+        {name: 'España', value: 'spain'},
+        {name: 'Bolivia', value: 'bolivia'},
+        {name: 'Francia', value: 'france'},
+        {name: 'Portugal', value: 'portugal'},
+        ],
+        selectedCountry: 'spain'
     }
   },
-  mounted: function () {
-    const self = this
-    getArtists()
+  components: {
+    Artist
+  },
+  methods: {
+    refreshArtist() {
+      const self = this
+      getArtists(this.selectedCountry)
       .then(function (artists) {
         self.artists = artists
       })
+    }
+  },
+  mounted() {
+    this.refreshArtist()
+  },
+  watch: {
+    selectedCountry: function() {
+      this.refreshArtist()
+
+    }
   }
 }
 </script>
