@@ -1,9 +1,9 @@
 <template>
-
   <div id="app">
      <h1 class="titulo">TopArtist.es</h1>
-     <p>Selecciona el pais del que quieres ver la lista de  los artistas más escuchados.</p>
-    <!-- <img src="./assets/logo.png"> -->
+     <br>
+     <p>Selecciona el pais del que quieres ver la lista de los artistas más escuchados.</p>
+     <br>
     <select class="selector" v-model="selectedCountry">
       <option v-for="country in countries" v-bind:value="country.value">{{ country.name }}</option>
     </select>
@@ -11,12 +11,9 @@
     <ul>
       <artist v-for="artist in artists" v-bind:artist="artist" v-bind:key="artist.mbid"></artist>
     </ul>
-    <p class="footer"> La fuente de todos estos datos es <a href="https://last.fm/">Last.fm</a></p>
-   
+    <p class="footer"> Esta web usa como fuente de sus datos <a href="https://last.fm/">Last.fm</a></p>
   </div>
-  
 </template>
-
 <script>
 import Artist from './components/Artist.vue'
 import Spinner from './components/Spinner.vue'
@@ -28,18 +25,18 @@ export default {
     return {
       artists: [],
       countries: [
-        {name: 'Argentina', value: 'argentina'},
-        {name: 'Chile', value: 'chile'},
-        {name: 'Ecuador', value: 'ecuador'},
-        {name: 'España', value: 'spain'},
-        {name: 'Bolivia', value: 'bolivia'},
-        {name: 'Francia', value: 'france'},
-        {name: 'Portugal', value: 'portugal'},
         {name: 'Alemania', value: 'germany'},
-        {name: 'Brasil', value: 'brazil'},
+        {name: 'Argentina', value: 'argentina'},
         {name: 'Bélgica', value: 'belgium'},
-        {name: 'China', value: 'china'},
+        {name: 'Brasil', value: 'brazil'},
+        {name: 'Bolivia', value: 'bolivia'},
         {name: 'Colombia', value: 'colombia'},
+        {name: 'Chile', value: 'chile'},
+        {name: 'China', value: 'china'},
+        {name: 'España', value: 'spain'},
+        {name: 'Ecuador', value: 'ecuador'},
+        {name: 'Francia', value: 'france'},
+        {name: 'Portugal', value: 'portugal'}   
         ],
         selectedCountry: 'spain',
         loading: true
@@ -79,7 +76,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
    color:seagreen;
    text-align: center;
- 
 }
 h1.titulo {
     margin: 0;
@@ -87,8 +83,14 @@ h1.titulo {
     color:seagreen;
     margin-top: 0;
     padding-top:0;
-    font-weight: bolder;
-  
+    font-weight: bolder;  
+}
+.titulo{
+  background: #201f1f;
+  margin-top:0;
+  padding-top:0;
+  height: 85px;
+
 }
 ul {
   list-style-type: none;
@@ -96,10 +98,8 @@ ul {
   padding-right: 1%;
   overflow: hidden;
 }
-
 li {
-  float: left;
-  
+  float: left; 
 }
 li a {
   display: block;
@@ -108,12 +108,15 @@ li a {
   text-decoration: none;
   color: seagreen;
 }
-
 li:hover {
   background-color: #111111;
 }
 body{
   background:black;
+  margin-top:0;
+  padding-top: 0;
+  margin-left: 0;
+  margin-right: 0;
 }
 .footer{
   font-size: 0.7em;
@@ -124,8 +127,7 @@ body{
   color:gray;
 }
 .selector, p{
-  color: seagreen;
-  
+  color: seagreen; 
 }
 .selector{
   width: 15%;

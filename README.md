@@ -1,4 +1,4 @@
-# topartist
+# TopArtist
 
 > Visualizacion de las listas de existos de musica en distintos paises
 
