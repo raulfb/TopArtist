@@ -2,7 +2,7 @@
 
   <div id="app">
      <h1 class="titulo">TopArtist.es</h1>
-     <p>Selecciona el pais del que quieres ver los artistas más escuchados.</p>
+     <p>Selecciona el pais del que quieres ver la lista de  los artistas más escuchados.</p>
     <!-- <img src="./assets/logo.png"> -->
     <select class="selector" v-model="selectedCountry">
       <option v-for="country in countries" v-bind:value="country.value">{{ country.name }}</option>
@@ -11,7 +11,10 @@
     <ul>
       <artist v-for="artist in artists" v-bind:artist="artist" v-bind:key="artist.mbid"></artist>
     </ul>
+    <p class="footer"> La fuente de todos estos datos es <a href="https://last.fm/">Last.fm</a></p>
+   
   </div>
+  
 </template>
 
 <script>
@@ -66,13 +69,13 @@ export default {
 </script>
 
 <style>
-#app {
+ #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+   color:seagreen;
+   text-align: center;
+ 
 }
 
 h1.titulo {
@@ -82,28 +85,49 @@ h1.titulo {
     margin-top: 0;
     padding-top:0;
     font-weight: bolder;
+  
 }
-h1, h2 {
-  font-weight: normal;
-}
-
 ul {
   list-style-type: none;
-  padding: 10px;
+  padding-left: 2%;
+  padding-right: 1%;
+  overflow: hidden;
 }
 
 li {
-  display:block;
-  margin: 0 10px;
+  float: left;
+  
 }
 
-a {
-  color: #42b983;
+li a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+  color: seagreen;
+}
+
+li:hover {
+  background-color: #111111;
+}
+body{
+  background:black;
+}
+.footer{
+  font-size: 0.7em;
+  color:white;
+}
+.footer a{
+  text-decoration: none;
+  color:gray;
 }
 .selector, p{
   color: seagreen;
+  
 }
-body{
-  background:#cccccc;
+.selector{
+  width: 15%;
+  height: 30px;
 }
+
 </style>

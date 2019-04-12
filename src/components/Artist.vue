@@ -15,8 +15,8 @@ export default {
 
 <style scoped>
 li.artist{
-    display: block;
-    margin: 10px 0;
+   width: 20%;
+  
 }
 
 </style>
