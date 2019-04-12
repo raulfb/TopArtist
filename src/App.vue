@@ -35,6 +35,11 @@ export default {
         {name: 'Bolivia', value: 'bolivia'},
         {name: 'Francia', value: 'france'},
         {name: 'Portugal', value: 'portugal'},
+        {name: 'Alemania', value: 'germany'},
+        {name: 'Brasil', value: 'brazil'},
+        {name: 'Bélgica', value: 'belgium'},
+        {name: 'China', value: 'china'},
+        {name: 'Colombia', value: 'colombia'},
         ],
         selectedCountry: 'spain',
         loading: true
@@ -67,7 +72,6 @@ export default {
   }
 }
 </script>
-
 <style>
  #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -77,7 +81,6 @@ export default {
    text-align: center;
  
 }
-
 h1.titulo {
     margin: 0;
     font-size: 60px;
@@ -98,7 +101,6 @@ li {
   float: left;
   
 }
-
 li a {
   display: block;
   text-align: center;
@@ -129,5 +131,4 @@ body{
   width: 15%;
   height: 30px;
 }
-
 </style>

@@ -12,11 +12,8 @@ export default {
     props: [ 'artist' ]
 }
 </script>
-
 <style scoped>
 li.artist{
    width: 20%;
-  
 }
-
 </style>
