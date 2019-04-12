@@ -11,7 +11,7 @@
     <ul>
       <artist v-for="artist in artists" v-bind:artist="artist" v-bind:key="artist.mbid"></artist>
     </ul>
-    <p class="footer"> Esta web usa como fuente de sus datos <a href="https://last.fm/">Last.fm</a></p>
+    <p class="footer"> Esta web usa como fuente de sus datos <a href="https://last.fm/">Last.fm</a>.Web diseñada por <a href="https://raulfranco.es">Raúl Franco Bouso</a></p>
   </div>
 </template>
 <script>
