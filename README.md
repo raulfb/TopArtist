@@ -15,4 +15,6 @@ npm run dev
 npm run build
 ```
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## Funcionamiento
+
+La aplicacion toma los datos de la api de last.fm para mostrar los artistas más escuchados en distintos paises. Podrá seleccionar el país del que quiere obtener los datos a través de un selector.
